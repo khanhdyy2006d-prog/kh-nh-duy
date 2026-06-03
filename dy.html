@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>4 Phép Tính</title>
+</head>
+<body>
+Nhập A: <input type="number" id="a"><br><br>
+Nhập B: <input type="number" id="b"><br><br>
+
+<button onclick="tong()">Tính Tổng</button>
+<button onclick="hieu()">Tính Hiệu</button>
+<button onclick="tich()">Tính Tích</button>
+<button onclick="thuong()">Tính Thương</button>
+
+<h3 id="kq"></h3>
+
+<script>
+function tong(){
+let a = Number(document.getElementById("a").value);
+let b = Number(document.getElementById("b").value);
+document.getElementById("kq").innerHTML = "Tổng = " + (a+b);
+}
+
+function hieu(){
+let a = Number(document.getElementById("a").value);
+let b = Number(document.getElementById("b").value);
+document.getElementById("kq").innerHTML = "Hiệu = " + (a-b);
+}
+
+function tich(){
+let a = Number(document.getElementById("a").value);
+let b = Number(document.getElementById("b").value);
+document.getElementById("kq").innerHTML = "Tích = " + (a*b);
+}
+
+function thuong(){
+let a = Number(document.getElementById("a").value);
+let b = Number(document.getElementById("b").value);
+document.getElementById("kq").innerHTML = "Thương = " + (a/b);
+}
+</script>
+</body>
+</html>
+2.Giải phương trình bậc 2
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Giải PT Bậc 2</title>
+</head>
+<body>
+
+a: <input type="number" id="a"><br><br>
+b: <input type="number" id="b"><br><br>
+c: <input type="number" id="c"><br><br>
+
+<button onclick="giaiPT()">Giải phương trình</button>
+
+<h3 id="kq"></h3>
+
+<script>
+function giaiPT(){
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+
+    if(a == 0){
+        if(b == 0){
+            if(c == 0)
+                document.getElementById("kq").innerHTML="Vô số nghiệm";
+            else
+                document.getElementById("kq").innerHTML="Vô nghiệm";
+        }else{
+            document.getElementById("kq").innerHTML=
+            "Nghiệm x = " + (-c/b);
+        }
+    }else{
+        let delta = b*b - 4*a*c;
+
+        if(delta < 0){
+            document.getElementById("kq").innerHTML="Vô nghiệm";
+        }
+        else if(delta == 0){
+            let x = -b/(2*a);
+            document.getElementById("kq").innerHTML=
+            "Nghiệm kép x1 = x2 = " + x;
+        }
+        else{
+            let x1 = (-b + Math.sqrt(delta))/(2*a);
+            let x2 = (-b - Math.sqrt(delta))/(2*a);
+
+            document.getElementById("kq").innerHTML=
+            "x1 = " + x1 + "<br>x2 = " + x2;
+        }
+    }
+}
+</script>
+
+</body>
+</html>
+3.Max Min 2 số bằng jQuery
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+a: <input type="number" id="a"><br><br>
+b: <input type="number" id="b"><br><br>
+
+<button id="btn">Tính Max/Min</button>
+
+<h3 id="kq"></h3>
+
+<script>
+$("#btn").click(function(){
+
+    let a = Number($("#a").val());
+    let b = Number($("#b").val());
+
+    let max = Math.max(a,b);
+    let min = Math.min(a,b);
+
+    $("#kq").html("Max = " + max + "<br>Min = " + min);
+});
+</script>
+
+</body>
+</html>
+4a. Giải và biện luận phương trình bậc nhất
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="number" id="a">
+<input type="number" id="b">
+<input type="number" id="c">
+<input type="number" id="d">
+
+<button onclick="tim()">Tìm Max/Min</button>
+
+<h3 id="kq"></h3>
+
+<script>
+function tim(){
+
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+    let d = Number(document.getElementById("d").value);
+
+    let max = Math.max(a,b,c,d);
+    let min = Math.min(a,b,c,d);
+
+    document.getElementById("kq").innerHTML =
+    "Max = " + max + "<br>Min = " + min;
+}
+
+</script>
+<script>
+function PTBN(){
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+
+    if(a==0){
+        if(b==0)
+            alert("Vô số nghiệm");
+        else
+            alert("Vô nghiệm");
+    }
+    else{
+        alert("x = " + (-b/a));
+    }
+}
+</script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức Bootstrap</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background:#f2f2f2;
+        }
+
+        .wrapper{
+            width:80%;
+            margin:auto;
+            background:white;
+        }
+
+        .menu{
+            background:#ff5a00;
+        }
+
+        .menu a{
+            color:white !important;
+            font-weight:bold;
+        }
+
+        .title-news{
+            font-weight:bold;
+            font-size:26px;
+            margin-top:20px;
+        }
+
+        .footer{
+            background:#ff5a00;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:20px;
+        }
+
+        .small-news img{
+            height:220px;
+            object-fit:cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Banner -->
+    <div class="container-fluid p-0">
+        <img src="images/banner.jpg"
+             class="img-fluid w-100"
+             alt="banner">
+    </div>
+
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg menu">
+        <div class="container">
+
+            <button class="navbar-toggler bg-light"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Góp ý</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hỏi đáp</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ảnh lớn -->
+    <div class="container mt-3">
+        <img src="images/tinlon.jpg"
+             class="img-fluid w-100"
+             alt="">
+    </div>
+
+    <!-- Tin nổi bật -->
+    <div class="container mt-4">
+        <h3>
+            Vòng xoay cao tốc 34.500 tỷ sự lún quá mức,
+            cần 300 ngày khắc phục
+        </h3>
+
+        <p class="text-secondary">
+            Đại diện Ban quản lý dự án cao tốc Đà Nẵng –
+            Quảng Ngãi thừa nhận vòng xoay cao tốc bị lún
+            quá mức cho phép và cần khoảng 300 ngày để
+            khắc phục hoàn toàn.
+        </p>
+    </div>
+
+    <!-- 3 Tin nhỏ -->
+    <div class="container mt-4">
+        <div class="row">
+
+            <div class="col-md-4 small-news">
+                <img src="images/news1.jpg"
+                     class="img-fluid w-100">
+
+                <p class="mt-2">
+                    Phát ngôn ấn tượng trong 3 ngày Quốc hội
+                    chất vấn theo lời hứa
+                </p>
+            </div>
+
+            <div class="col-md-4 small-news">
+                <img src="images/news2.jpg"
+                     class="img-fluid w-100">
+
+                <p class="mt-2">
+                    Trưởng đoàn ĐTVN: Cần giải quyết vấn đề
+                    tâm lý ở AFF Cup 2018
+                </p>
+            </div>
+
+            <div class="col-md-4 small-news">
+                <img src="images/news3.jpg"
+                     class="img-fluid w-100">
+
+                <p class="mt-2">
+                    Việt Nam hơn 20 năm không thắng Indonesia:
+                    Nỗi sợ lớn hơn cả Thái Lan?
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Copyright © Võ Đoàn Tiến
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
